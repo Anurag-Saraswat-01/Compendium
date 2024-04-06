@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="entryUrl">
     <div>
-      <img :src="entry.image" :alt="entry.name" loading="lazy" />
+      <img :src="entry.image" :alt="entry.name" />
       <span>{{ entry.name }}</span>
     </div>
   </NuxtLink>

@@ -1,9 +1,10 @@
 <template>
   <main>
     <h2>Category: {{ $route.params.category }}</h2>
-    <div>
+    <div v-if="entries">
       <Card v-for="entry in entries" :entry="entry" />
     </div>
+    <Loader v-else />
   </main>
 </template>
 
@@ -16,9 +17,11 @@ export default {
       entries: null,
     };
   },
+
   mounted() {
     this.init();
   },
+
   methods: {
     async init() {
       if (this.$route.params.category === "all") {

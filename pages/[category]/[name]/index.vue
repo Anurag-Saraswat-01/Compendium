@@ -54,6 +54,7 @@
       </div>
     </div>
   </main>
+  <Loader v-else />
 </template>
 
 <script>
