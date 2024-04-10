@@ -1,12 +1,14 @@
 <template>
-  <div class="badge">
-    {{ label }}
-  </div>
+  <NuxtLink :to="`/filters/${property}=${label}`">
+    <div class="badge">
+      {{ label }}
+    </div>
+  </NuxtLink>
 </template>
 
 <script>
 export default {
-  props: ["label"],
+  props: ["label", "property"],
 };
 </script>
 

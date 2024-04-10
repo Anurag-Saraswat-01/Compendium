@@ -1,13 +1,19 @@
 <template>
   <main v-if="data">
+    <span class="back-to-link">
+      <NuxtLink :to="`/category/${this.data.category}`">
+        <= {{ this.data.category }}
+      </NuxtLink>
+    </span>
+
     <!-- NAME -->
     <h1 class="entry-name">{{ data.name }}</h1>
 
     <!-- DESCRIPTION -->
     <p class="entry-desc">{{ data.description }}</p>
 
-    <!-- IMAGE -->
     <div class="entry-content">
+      <!-- IMAGE -->
       <div class="entry-image-wrapper">
         <img
           class="entry-image"
@@ -26,6 +32,7 @@
             <Badge
               v-for="location in data.common_locations"
               :label="location"
+              property="common_locations"
             />
           </div>
         </div>
@@ -52,7 +59,7 @@
         <div v-if="hasDrops" class="data-section">
           <h3 class="section-header">Drops</h3>
           <div class="badge-list">
-            <Badge v-for="drop in data.drops" :label="drop" />
+            <Badge v-for="drop in data.drops" :label="drop" property="drops" />
           </div>
         </div>
 
@@ -141,9 +148,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.back-to-link {
+  text-transform: capitalize;
+}
+
 .entry-name {
   text-align: center;
   text-transform: capitalize;
+  margin-top: 2rem;
 }
 
 .entry-desc {

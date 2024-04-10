@@ -1,9 +1,7 @@
 <template>
   <main>
-    <h2>Category: {{ $route.params.category }}</h2>
-    <div v-if="entries" class="card-grid">
-      <Card v-for="entry in entries" :entry="entry" />
-    </div>
+    <h1 class="category-name">{{ $route.params.category }}</h1>
+    <CardGrid v-if="entries" :entries="entries" />
     <Loader v-else />
   </main>
 </template>
@@ -35,10 +33,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  width: 100%;
+.category-name {
+  text-transform: capitalize;
+  margin-bottom: 2rem;
 }
 </style>
