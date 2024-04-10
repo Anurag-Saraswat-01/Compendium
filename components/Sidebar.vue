@@ -4,7 +4,7 @@
     <h1 class="sidebar-title">Categories</h1>
     <div class="category-list">
       <div v-for="category in categories" class="category">
-        <NuxtLink :to="`/category/${category}`">
+        <NuxtLink :to="`/category/${category}`" @click="onCloseButtonClick">
           {{ category }}
         </NuxtLink>
       </div>

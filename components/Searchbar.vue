@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import server from "~/server";
+import server from "~/utils/server";
 
 export default {
   data() {

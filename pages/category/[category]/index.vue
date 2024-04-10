@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import server from "~/server";
+import server from "~/utils/server";
 
 export default {
   data() {
@@ -35,13 +35,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  padding: 1rem;
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 1rem;
-    width: 100%;
-  }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  width: 100%;
 }
 </style>

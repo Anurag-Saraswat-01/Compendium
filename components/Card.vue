@@ -2,7 +2,9 @@
   <NuxtLink :to="entryUrl">
     <div class="card">
       <img class="card-img" :src="entry.image" :alt="entry.name" />
-      <span class="card-title">{{ entry.name }}</span>
+      <div class="card-title-wrapper">
+        <span class="card-title">{{ entry.name }}</span>
+      </div>
     </div>
   </NuxtLink>
 </template>
@@ -25,22 +27,27 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   border: 1px solid black;
   border-radius: 0.25rem;
-  // padding: 0.5rem;
-  width: 100%;
-  overflow: hidden;
+  height: 100%;
 
   .card-img {
-    flex-basis: 1;
+    flex-grow: 1;
     width: 100%;
     object-fit: cover;
   }
 
-  .card-title {
-    text-transform: capitalize;
-    margin-bottom: 0.5rem;
+  .card-title-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+
+    .card-title {
+      text-transform: capitalize;
+    }
   }
 }
 </style>

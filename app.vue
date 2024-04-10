@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <Header :showSidebar="showSidebar" @menu-click="onShowSidebar" />
     <div class="main-content">
       <Sidebar :showSidebar="showSidebar" @close-click="onHideSidebar" />
@@ -8,7 +8,7 @@
         <Footer />
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -58,5 +58,10 @@ a.visited {
   overflow-y: auto;
   width: 100%;
   height: calc(100vh - 2.75rem);
+}
+
+main {
+  padding: 1rem;
+  min-height: calc(100% - 3.5rem);
 }
 </style>
